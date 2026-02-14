@@ -22,11 +22,14 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Lint with pylint
-        run: pylint ./my_package
+        run: |
+          make lint
 
 
       - name: Test with pytest
-        run: pytest
+        run: |
+          make test
 
       - name: Format code
-        run: black .
+        run: |
+          make format.
